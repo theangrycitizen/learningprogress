@@ -38,7 +38,17 @@ if ARGS['viewall']:
 if ARGS['view']:
     #implement view specific status here
     #status is ARGS['learnt'] or ARGS['pending']
-    pass
+    #pass
+    
+    RES = requests.get(API_URL)
+    if RES.status_code == 200:
+        print colored('Getting all values...', 'green')
+        for post in RES.json():
+            if post["status"] == ARGS["<status>"]: # To check status Learn or Pending
+                print post["skill"] + "\t|\t" + post["status"]
+    else:
+        print colored('Error: There was a problem ' \
+            'processing your request', 'red')
 
 if ARGS['progress']:
     #display percentage learnt
