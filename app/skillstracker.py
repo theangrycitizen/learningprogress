@@ -1,6 +1,6 @@
 """CLI skillstracker to track campers learning progress
 Usage:
-    skillstracker.py add <skill> 
+    skillstracker.py add [<skill>...] 
     skillstracker.py viewall 
     skillstracker.py setstatus <skill>
     skillstracker.py view <status>
@@ -26,13 +26,20 @@ if __name__ == '__main__':
 if ARGS['add']:
     #implement add function here
     #skill name is ARGS['skill']
+    if ARGS['<skill>']:
+        for skill in ARGS['<skill>']:
+            print skill
+    pass
 
 if ARGS['viewall']:    
     #implement view all added skills
+    pass
 
 if ARGS['view']:
     #implement view specific status here
     #status is ARGS['learnt'] or ARGS['pending']
+    pass
 
 if ARGS['progress']:
     #display percentage learnt
+    pass
